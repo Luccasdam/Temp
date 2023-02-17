@@ -2,6 +2,7 @@
 
 
 #include "TCharacter.h"
+#include "TInteractComponent.h"
 
 // Sets default values
 ATCharacter::ATCharacter()
@@ -9,6 +10,8 @@ ATCharacter::ATCharacter()
 	PrimaryActorTick.bCanEverTick = true;
 
 	JumpMaxCount = 2;
+
+	InteractComponent = CreateDefaultSubobject<UTInteractComponent>("InteractComponent");
 }
 
 // Called when the game starts or when spawned

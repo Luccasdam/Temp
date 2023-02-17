@@ -6,6 +6,8 @@
 #include "GameFramework/Character.h"
 #include "TCharacter.generated.h"
 
+class UTInteractComponent;
+
 UCLASS()
 class TEST_API ATCharacter : public ACharacter
 {
@@ -22,4 +24,7 @@ public:
 	
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+protected:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components")
+	TObjectPtr<UTInteractComponent> InteractComponent;
 };
