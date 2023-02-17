@@ -1,13 +1,13 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#define TRACE_DISTANCE 500.0f
-#define TRACE_SPHERE_RADIUS 50.0f
-
-
 #include "TInteractComponent.h"
-
 #include "TInteractInterface.h"
+
+
+#define TRACE_DISTANCE 200.0f
+#define TRACE_SPHERE_RADIUS 25.0f
+
 
 // Sets default values for this component's properties
 UTInteractComponent::UTInteractComponent()
@@ -44,7 +44,7 @@ AActor* UTInteractComponent::FindBestActorToInteract() const
 	
 	if (GetWorld()->SweepMultiByObjectType(Hits, TraceStart, TraceEnd, FQuat::Identity, ObjQueryParams, CollisionShape))
 	{
-		float BestInteractionDistance = TRACE_DISTANCE*10;
+		float BestInteractionDistance = TRACE_DISTANCE;
 		
 		for (FHitResult& Hit : Hits)
 		{
